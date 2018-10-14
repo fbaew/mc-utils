@@ -1,16 +1,21 @@
-from os import path, listdir
+from os import path 
 from shutil import copy as fscopy
 
 
 class TextureRectifier:
+    """
+    Provides cross-compatibility between different versions of minecraft
+    texture organization and naming conventions. Different object types can be
+    defined in self.items, and depending on what keys are present in the
+    definition, different file path and name templates are evaluated.
+    """
 
 
-    def __init__(self, source_pack, target_pack):
+    def __init__(self, target_pack, pack_priority):
 
         self.resource_root = '/mnt/mcserver/resource'
         self.default_texture = 'default.png'
-        self.packs = ['sapix', 'soartex']
-        self.source = source_pack
+        self.packs = pack_priority
         self.target = target_pack
 
         self.texture_path = path.join(
@@ -332,7 +337,7 @@ class TextureRectifier:
 
 
 def main():
-    rectifier = TextureRectifier('sapix', 'capri')
+    rectifier = TextureRectifier('capri', pack_priority = ['sapix', 'soartex'])
     rectifier.populate_missing()
 
 if __name__ == '__main__':
