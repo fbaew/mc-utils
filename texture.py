@@ -270,6 +270,8 @@ class TextureRectifier:
 
     def copy_asset(self, asset_path, dest_path):
         current_pack = 0
+        dest_item = None
+        source_item = None
         while current_pack < len(self.search_paths):
             try:
                 source_item = path.join(
@@ -293,6 +295,14 @@ class TextureRectifier:
             fscopy(self.default_texture, dest_item)
 
     def collect_complex_assets(self):
+
+        """
+        Ignoring the simple items (i.e. resources where the relative path structure
+        does not change from source to target), attempt to identify each minecraft object
+        class defined, and construct the appropriate source and destination paths for
+        the associated textures/resources.
+
+        """
         filetype = '.png'
         args = []
         for item in self.items:
@@ -335,10 +345,10 @@ class TextureRectifier:
                     )
     
 
-
 def main():
-    rectifier = TextureRectifier('capri', pack_priority = ['sapix', 'soartex'])
+    rectifier = TextureRectifier('capri', pack_priority=['sapix', 'soartex'])
     rectifier.populate_missing()
+
 
 if __name__ == '__main__':
     main()
