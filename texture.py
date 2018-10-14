@@ -59,7 +59,22 @@ class TextureRectifier:
             },
             'concrete': {
                 'colors': [
-                    'silver'
+                    'black',
+                    'blue',
+                    'brown',
+                    'cyan',
+                    'gray',
+                    'green',
+                    'light_blue',
+                    'lime',
+                    'magenta',
+                    'orange',
+                    'pink',
+                    'purple',
+                    'red',
+                    'silver',
+                    'white',
+                    'yellow'
                 ],
                 'src_format': lambda color: 'concrete_' + color + '.png',
                 'dest_format': lambda obj, color: '_'.join(
@@ -85,39 +100,60 @@ class TextureRectifier:
                     'white',
                     'yellow'
                 ],
-                'src_format': lambda color: 'concrete_' + color + '.png',
+                'src_format': lambda color: 'concrete_powder_' + color + '.png',
                 'dest_format': lambda obj, color: '_'.join(
                     [obj, color]
                 ) + '.png'
             },
             '_simple': [
-                'iron_trapdoor.png',
-                'water_still.png',
-                'rail_normal_turned.png',
-                'potatoes_stage_0.png',
-                'potatoes_stage_1.png',
-                'potatoes_stage_2.png',
-                'potatoes_stage_3.png',
-                'cocoa_stage_0.png',
-                'cocoa_stage_1.png',
-                'cocoa_stage_2.png',
-                'repeater_off.png',
-                'redstone_torch_off.png',
-                'redstone_torch_on.png',
-                'trapdoor.png',
-                'iron_bars.png',
-                'dropper_front_horizontal.png',
-                'dropper_front_vertical.png',
-                'flower_rose.png',
-                'chorus_plant.png',
-                'jukebox_top.png',
-                'noteblock.png',
-                'lever.png',
-                'fire_layer_0.png',
-                'fire_layer_1.png',
-                'prismarine_dark.png',
-                'prismarine_rough.png',
-                'comparator_on.png'
+                'iron_trapdoor',
+                'water_still',
+                'rail_normal_turned',
+                'potatoes_stage_0',
+                'potatoes_stage_1',
+                'potatoes_stage_2',
+                'potatoes_stage_3',
+                'cocoa_stage_0',
+                'cocoa_stage_1',
+                'cocoa_stage_2',
+                'repeater_off',
+                'redstone_torch_off',
+                'redstone_torch_on',
+                'trapdoor',
+                'iron_bars',
+                'dropper_front_horizontal',
+                'dropper_front_vertical',
+                'dispenser_front_horizontal',
+                'dispenser_front_vertical',
+                'flower_rose',
+                'chorus_plant',
+                'jukebox_top',
+                'noteblock',
+                'lever',
+                'fire_layer_0',
+                'fire_layer_1',
+                'prismarine_dark',
+                'prismarine_rough',
+                'comparator_on',
+                'magma',
+                'mushroom_block_skin_brown',
+                'mushroom_block_skin_stem',
+                'mushroom_block_inside',
+                'mushroom_block_skin_red',
+                'command_block_front',
+                'command_block_side',
+                'command_block_back',
+                'farmland_wet',
+                'lava_still',
+                'portal',
+                'dragon_egg',
+                'observer_front',
+                'observer_top',
+                'observer_back',
+                'observer_back_lit',
+                'observer_side',
+                'chorus_flower'
+
             ]
         }
 
@@ -135,8 +171,8 @@ class TextureRectifier:
 
         for filename in deficits:
             self.copy_asset(
-                path.join('blocks', filename),
-                path.join('blocks', filename)
+                path.join('blocks', filename) + '.png',
+                path.join('blocks', filename) + '.png'
             )
 
         self.collect_complex_assets()
