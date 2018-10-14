@@ -66,6 +66,30 @@ class TextureRectifier:
                     [obj, color]
                 ) + '.png'
             },
+            'concrete_powder': {
+                'colors': [
+                    'black',
+                    'blue',
+                    'brown',
+                    'cyan',
+                    'gray',
+                    'green',
+                    'light_blue',
+                    'lime',
+                    'magenta',
+                    'orange',
+                    'pink',
+                    'purple',
+                    'red',
+                    'silver',
+                    'white',
+                    'yellow'
+                ],
+                'src_format': lambda color: 'concrete_' + color + '.png',
+                'dest_format': lambda obj, color: '_'.join(
+                    [obj, color]
+                ) + '.png'
+            },
             '_simple': [
                 'iron_trapdoor.png',
                 'water_still.png',
