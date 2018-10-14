@@ -33,6 +33,14 @@ class TextureRectifier:
                     [obj,material, part]
                 ) + '.png'
             },
+            'fire': {
+                'stages': 2,
+                'stage_format': lambda obj, stage: '{}_layer_{}.png'.format(obj, stage)
+            },
+            'frosted_ice': {
+                'stages': 4,
+                'stage_format': lambda obj, stage: '{}_{}.png'.format(obj, stage)
+            },
             'beetroots': {
                 'stages': 4,
                 'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
@@ -128,16 +136,11 @@ class TextureRectifier:
             },
 
             '_simple': [
+                'dirt_podzol_side',
+                'dirt_podzol_top',
                 'iron_trapdoor',
                 'water_still',
                 'rail_normal_turned',
-                'potatoes_stage_0',
-                'potatoes_stage_1',
-                'potatoes_stage_2',
-                'potatoes_stage_3',
-                'cocoa_stage_0',
-                'cocoa_stage_1',
-                'cocoa_stage_2',
                 'repeater_off',
                 'repeater_on',
                 'redstone_torch_off',
@@ -154,8 +157,6 @@ class TextureRectifier:
                 'jukebox_top',
                 'noteblock',
                 'lever',
-                'fire_layer_0',
-                'fire_layer_1',
                 'prismarine_dark',
                 'prismarine_rough',
                 'comparator_on',
@@ -165,7 +166,10 @@ class TextureRectifier:
                 'mushroom_block_skin_stem',
                 'mushroom_block_inside',
                 'mushroom_block_skin_red',
+                'mushroom_red',
                 'mushroom_brown',
+                'quartz_block_chiseled_top',
+                'quartz_block_chiseled',
                 'command_block_front',
                 'command_block_side',
                 'command_block_back',
@@ -173,6 +177,10 @@ class TextureRectifier:
                 'chain_command_block_front',
                 'chain_command_block_back',
                 'chain_command_block_side',
+                'repeating_command_block_front',
+                'repeating_command_block_back',
+                'repeating_command_block_conditional',
+                'repeating_command_block_side',
                 'farmland_wet',
                 'farmland_dry',
                 'lava_still',
@@ -190,17 +198,22 @@ class TextureRectifier:
                 'chorus_flower_dead',
                 'flower_rose',
                 'flower_dandelion',
+                'flower_blue_orchid',
+                'flower_allium',
+                'flower_pot',
+                'flower_dandelion_pot',
+                'flower_paeonia',
+                'flower_tulip_pink',
+                'flower_tulip_white',
+                'flower_tulip_orange',
+                'flower_tulip_red',
+                'flower_oxeye_daisy',
+                'flower_rose_pot',
+                'flower_rose',
+                'flower_houstonia',
                 'flower_oxeye_daisy',
                 'bone_block_side',
                 'bone_block_top',
-                'frosted_ice_0',
-                'frosted_ice_1',
-                'frosted_ice_2',
-                'frosted_ice_3',
-                'carrots_stage_0',
-                'carrots_stage_1',
-                'carrots_stage_2',
-                'carrots_stage_3',
                 'melon_stem_disconnected',
                 'melon_stem_connected',
                 'double_plant_fern_top',
@@ -221,13 +234,11 @@ class TextureRectifier:
                 'daylight_detector_top',
                 'daylight_detector_side',
                 'bookshelf',
-                'nether_wart_stage_0',
-                'nether_wart_stage_1',
-                'nether_wart_stage_2',
                 'nether_wart_block',
                 'hopper_top',
                 'hopper_outside',
-                'hopper_inside'
+                'hopper_inside',
+                'stonebrick_carved'
             ]
         }
 
