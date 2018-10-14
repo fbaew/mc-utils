@@ -79,6 +79,7 @@ class TextureRectifier:
                 'cocoa_stage_2.png',
                 'repeater_off.png',
                 'redstone_torch_off.png',
+                'redstone_torch_on.png',
                 'trapdoor.png',
                 'iron_bars.png',
                 'dropper_front_horizontal.png',
@@ -86,7 +87,13 @@ class TextureRectifier:
                 'flower_rose.png',
                 'chorus_plant.png',
                 'jukebox_top.png',
-                'noteblock.png'
+                'noteblock.png',
+                'lever.png',
+                'fire_layer_0.png',
+                'fire_layer_1.png',
+                'prismarine_dark.png',
+                'prismarine_rough.png',
+                'comparator_on.png'
             ]
         }
 
