@@ -33,6 +33,27 @@ class TextureRectifier:
                     [obj,material, part]
                 ) + '.png'
             },
+            'beetroots': {
+                'stages': 4,
+                'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
+            },
+            'potatoes': {
+                'stages': 4,
+                'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
+            },
+            'cocoa': {
+                'stages': 3,
+                'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
+            },
+
+           'carrots': {
+                'stages': 4,
+                'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
+            },
+           'nether_wart': {
+                'stages': 3,
+                'stage_format': lambda obj, stage: '{}_stage_{}.png'.format(obj, stage)
+            },
             'terracotta': {
                 'colors': [
                     'black',
@@ -105,6 +126,7 @@ class TextureRectifier:
                     [obj, color]
                 ) + '.png'
             },
+
             '_simple': [
                 'iron_trapdoor',
                 'water_still',
@@ -117,15 +139,17 @@ class TextureRectifier:
                 'cocoa_stage_1',
                 'cocoa_stage_2',
                 'repeater_off',
+                'repeater_on',
                 'redstone_torch_off',
                 'redstone_torch_on',
+                'redstone_lamp_on',
+                'redstone_lamp_off',
                 'trapdoor',
                 'iron_bars',
                 'dropper_front_horizontal',
                 'dropper_front_vertical',
                 'dispenser_front_horizontal',
                 'dispenser_front_vertical',
-                'flower_rose',
                 'chorus_plant',
                 'jukebox_top',
                 'noteblock',
@@ -135,25 +159,75 @@ class TextureRectifier:
                 'prismarine_dark',
                 'prismarine_rough',
                 'comparator_on',
+                'comparator_off',
                 'magma',
                 'mushroom_block_skin_brown',
                 'mushroom_block_skin_stem',
                 'mushroom_block_inside',
                 'mushroom_block_skin_red',
+                'mushroom_brown',
                 'command_block_front',
                 'command_block_side',
                 'command_block_back',
+                'chain_command_block_conditional',
+                'chain_command_block_front',
+                'chain_command_block_back',
+                'chain_command_block_side',
                 'farmland_wet',
+                'farmland_dry',
                 'lava_still',
                 'portal',
+                'beacon',
+                'hay_block_top',
+                'hay_block_side',
                 'dragon_egg',
                 'observer_front',
                 'observer_top',
                 'observer_back',
                 'observer_back_lit',
                 'observer_side',
-                'chorus_flower'
-
+                'chorus_flower',
+                'chorus_flower_dead',
+                'flower_rose',
+                'flower_dandelion',
+                'flower_oxeye_daisy',
+                'bone_block_side',
+                'bone_block_top',
+                'frosted_ice_0',
+                'frosted_ice_1',
+                'frosted_ice_2',
+                'frosted_ice_3',
+                'carrots_stage_0',
+                'carrots_stage_1',
+                'carrots_stage_2',
+                'carrots_stage_3',
+                'melon_stem_disconnected',
+                'melon_stem_connected',
+                'double_plant_fern_top',
+                'double_plant_sunflower_front',
+                'double_plant_sunflower_bottom',
+                'double_plant_sunflower_back',
+                'double_plant_paeonia_bottom',
+                'double_plant_sunflower_top',
+                'double_plant_syringa_bottom',
+                'double_plant_paeonia_top',
+                'double_plant_rose_top',
+                'double_plant_fern_bottom',
+                'double_plant_syringa_top',
+                'double_plant_rose_bottom',
+                'double_plant_grass_top',
+                'double_plant_grass_bottom',
+                'daylight_detector_inverted_top',
+                'daylight_detector_top',
+                'daylight_detector_side',
+                'bookshelf',
+                'nether_wart_stage_0',
+                'nether_wart_stage_1',
+                'nether_wart_stage_2',
+                'nether_wart_block',
+                'hopper_top',
+                'hopper_outside',
+                'hopper_inside'
             ]
         }
 
@@ -236,6 +310,14 @@ class TextureRectifier:
                             self.items[item]['dest_format'](*args)
                         )
                     )
+            elif 'stages' in self.items[item]:
+                for stage in range(self.items[item]['stages']):
+                    args = [item, stage]
+                    self.copy_asset(
+                        path.join('blocks', self.items[item]['stage_format'](*args)),
+                        path.join('blocks', self.items[item]['stage_format'](*args))
+                    )
+    
 
 
 def main():
